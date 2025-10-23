@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "./footer/Footer";
+import Navbar from "./navbar/Navbar";
 
 interface IProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface IProps {
 const CommonLayout = ({ children }: IProps) => {
   return (
     <>
-      <div className="max-w-[1600px] mx-auto shadow-2xl">
+      <div className="max-w-[1600px] mx-auto ">
         <Navbar />
         <div className="container mx-auto mt-10 px-5 xl:px-0 min-h-screen">
           {children}
