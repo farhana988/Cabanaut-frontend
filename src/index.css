@@ -41,6 +41,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-custom-primary: var(--custom-primary);
   --color-custom-secondary: var(--custom-secondary);
+  --color-custom-accent: var(--custom-accent);
   --color-snow-white: var(--snow-white);
 }
 
@@ -79,6 +80,7 @@
   --sidebar-ring: oklch(0.708 0 0);
   --custom-primary: #2563EB ;
   --custom-secondary: #1e293b;
+  --custom-accent: #06B6D4;
   --snow-white: #f9fafb;
 }
 

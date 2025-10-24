@@ -33,12 +33,12 @@ const Navbar = () => {
           </div>
 
           {/* Right section */}
-          <Link to={"login"}>
+          <Link to={"/login"}>
             <Button
               size={"sm"}
               className="bg-snow-white text-black rounded-full font-semibold"
             >
-              Contact Us
+              Login
             </Button>
           </Link>
         </div>
