@@ -16,7 +16,7 @@ const NavLinks = ({ isMobile = false, onLinkClick }: MenuLinksProps) => {
             baseClass +
             (label === "Features" && !isMobile ? " block" : "") +
             (isActive
-              ? " underline underline-offset-4"
+              ? " gotu underline underline-offset-4"
               : " hover:underline hover:underline-offset-4")
           }
           onClick={onLinkClick}

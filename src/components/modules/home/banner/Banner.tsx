@@ -1,7 +1,7 @@
 import IconBtn from "@/components/buttons/IconBtn";
 import { ArrowUpRight, CheckCircle } from "lucide-react";
-import BannerBottom from "./BannerBottom";
 import { bannerFeatures } from "@/data/bannerData";
+import BannerBottom from "./BannerBottom";
 
 const Banner = () => {
   return (

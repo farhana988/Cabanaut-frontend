@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Aubrey&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gotu&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -129,6 +130,11 @@
 }
 .aubrey {
   font-family: "Aubrey";
+  font-weight: 400;
+  font-style: normal;
+}
+.gotu {
+  font-family: "Gotu", sans-serif;
   font-weight: 400;
   font-style: normal;
 }

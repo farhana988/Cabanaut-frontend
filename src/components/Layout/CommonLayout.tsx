@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import Footer from "./footer/Footer";
 import Navbar from "./navbar/Navbar";
-import Banner from "../modules/home/Banner";
+
 import useHomepage from "@/hooks/useHomepage";
+import Banner from "../modules/home/banner/Banner";
 
 interface IProps {
   children: ReactNode;
@@ -13,9 +14,9 @@ const CommonLayout = ({ children }: IProps) => {
   return (
     <>
       <Navbar />
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1600px] mx-auto bg-snow-white">
         <div className="relative">{isHomepage && <Banner />}</div>
-        <div className="container mx-auto px-5 xl:px-0 min-h-screen">
+        <div className="container mx-auto max-w-7xl pt-20 px-5 xl:px-0 min-h-screen">
           {children}
         </div>
         <Footer />
