@@ -4,7 +4,7 @@ import { Link } from "react-router";
 function ErrorPage() {
   return (
     <section className=" flex flex-col items-center justify-center min-h-screen">
-      <img src="/images/error.png" alt="Error illustration" />
+      <img src="/src/assets/images/error.png" alt="Error illustration" />
 
       <div className="flex justify-center items-center gap-5 ">
         <h2

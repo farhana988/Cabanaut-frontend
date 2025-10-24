@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Aubrey&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -78,9 +79,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --custom-primary: #2563EB ;
+  --custom-primary: #2563eb;
   --custom-secondary: #1e293b;
-  --custom-accent: #06B6D4;
+  --custom-accent: #06b6d4;
   --snow-white: #f9fafb;
 }
 
@@ -125,4 +126,9 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.aubrey {
+  font-family: "Aubrey";
+  font-weight: 400;
+  font-style: normal;
 }
