@@ -1,4 +1,4 @@
-import type { TeamCardProps } from "@/data/aboutData";
+import type { TeamCardProps } from "@/types/about.type";
 
 const TeamCard = ({ member }: TeamCardProps) => {
   const { image, name, position, socialLinks } = member || {};

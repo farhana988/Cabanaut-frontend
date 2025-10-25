@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import type { OfferingCardProps } from "@/data/aboutData";
+import type { OfferingCardProps } from "@/types/about.type";
 
 const OfferingCard = ({ offer }: OfferingCardProps) => {
   const { image, description, title, link } = offer || {};

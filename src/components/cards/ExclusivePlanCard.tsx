@@ -1,6 +1,6 @@
 import { ArrowUpRight, CheckCircle, Crown } from "lucide-react";
 import IconBtn from "../buttons/IconBtn";
-import type { ExclusivePlanCardProps } from "@/data/exclusivePlanData";
+import type { ExclusivePlanCardProps } from "@/types/exclusivePlan.type";
 
 const ExclusivePlanCard = ({ plan }: ExclusivePlanCardProps) => {
   const { highlighted, name, description, features, price } = plan || {};
