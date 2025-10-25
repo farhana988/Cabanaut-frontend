@@ -23,7 +23,7 @@ export const footerContactItems = [
   {
     type: "email",
     icon: Mail,
-    label: "support@cabanaut",
+    label: "support@cabanaut.com",
   },
   {
     type: "phone",
