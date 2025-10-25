@@ -4,7 +4,7 @@ const BannerBottom = () => {
   return (
     <section
       className="absolute z-40 top-[95%] left-1/2 transform -translate-x-1/2 
-      max-w-7xl w-full px-4 "
+      max-w-7xl w-full px-5 xl:px-0"
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-7 md:gap-4 xl:gap-10">
         {bannerServices.map(({ icon, title, description }) => (
