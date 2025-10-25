@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const FooterBottom = () => {
   return (
-    <div className="border-t border-gray-800 pt-6">
+    <div className="pt-6 max-w-7xl mx-auto">
       <div
         className=" flex flex-col md:flex-row items-center justify-between text-sm
        text-gray-400"

@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle, Crown } from "lucide-react";
+import { CheckCircle, Crown } from "lucide-react";
 import IconBtn from "../buttons/IconBtn";
 import type { ExclusivePlanCardProps } from "@/types/exclusivePlan.type";
 
@@ -46,7 +46,6 @@ const ExclusivePlanCard = ({ plan }: ExclusivePlanCardProps) => {
         <IconBtn
           text="Ride In Luxury"
           to="/book-ride"
-          icon={ArrowUpRight}
           className="md:text-base! lg:text-xl!"
         />
       </div>

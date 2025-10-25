@@ -1,7 +1,7 @@
 import IconBtn from "@/components/buttons/IconBtn";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { aboutFeatures } from "@/data/aboutData";
-import { ArrowUpRight, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const AboutFeatures = () => {
   return (
@@ -35,7 +35,7 @@ const AboutFeatures = () => {
             ))}
           </div>
 
-          <IconBtn text="Book A Ride" to="/book-ride" icon={ArrowUpRight} />
+          <IconBtn text="Book A Ride" to="/book-ride" />
         </div>
 
         {/* Right image */}

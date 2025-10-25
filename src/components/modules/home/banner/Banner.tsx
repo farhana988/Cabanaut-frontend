@@ -1,5 +1,5 @@
 import IconBtn from "@/components/buttons/IconBtn";
-import { ArrowUpRight, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { bannerFeatures } from "@/data/bannerData";
 import BannerBottom from "./BannerBottom";
 
@@ -45,7 +45,7 @@ const Banner = () => {
             ))}
           </div>
 
-          <IconBtn text="Book A Ride" to="/book-ride" icon={ArrowUpRight} />
+          <IconBtn text="Book A Ride" to="/book-ride" />
         </div>
       </div>
       <BannerBottom />
