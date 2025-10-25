@@ -7,7 +7,7 @@ interface SocialLink {
 }
 export interface TeamMember {
   name: string;
-  title: string;
+  position: string;
   image: string;
   socialLinks: SocialLink[];
 }
@@ -17,7 +17,7 @@ export interface TeamCardProps {
 export const aboutTeam: TeamMember[] = [
   {
     name: "John Williams",
-    title: "Senior Chauffeur",
+    position: "Senior Chauffeur",
     image: "/src/assets/images/about/team-1.jpg",
     socialLinks: [
       {
@@ -36,7 +36,7 @@ export const aboutTeam: TeamMember[] = [
   },
   {
     name: "Michael Thoson",
-    title: "Executive Chauffeur",
+    position: "Executive Chauffeur",
     image: "/src/assets/images/about/team-2.jpg",
     socialLinks: [
       {
@@ -55,7 +55,7 @@ export const aboutTeam: TeamMember[] = [
   },
   {
     name: "Sophia Martinez",
-    title: "VIP Chauffeur",
+    position: "VIP Chauffeur",
     image: "/src/assets/images/about/team-3.jpeg",
     socialLinks: [
       {
@@ -74,7 +74,7 @@ export const aboutTeam: TeamMember[] = [
   },
   {
     name: "David Clark",
-    title: "Head Chauffeur",
+    position: "Head Chauffeur",
     image: "/src/assets/images/about/team-4.jpg",
     socialLinks: [
       {

@@ -1,7 +1,7 @@
 import type { TeamCardProps } from "@/data/aboutData";
 
 const TeamCard = ({ member }: TeamCardProps) => {
-  const { image, name, title, socialLinks } = member || {};
+  const { image, name, position, socialLinks } = member || {};
   return (
     <div
       className="flex flex-col sm:flex-row items-center sm:items-stretch
@@ -17,14 +17,16 @@ const TeamCard = ({ member }: TeamCardProps) => {
 
       {/* Info */}
       <div
-        className="sm:w-1/2 w-full bg-custom-accent/10 flex flex-col justify-center
-              p-6 md:p-3 lg:p-6 rounded-b-xl sm:rounded-l-none sm:rounded-r-xl"
+        className="sm:w-1/2 w-full bg-custom-accent/10 flex flex-col justify-center 
+      p-6 md:p-3 lg:p-6 rounded-b-xl sm:rounded-l-none sm:rounded-r-xl"
       >
-        <p className="opacity-90 text-sm mb-1">{title}</p>
+        {/* position */}
+        <p className="opacity-90 text-sm mb-1">{position}</p>
+        {/* name */}
         <h3 className="text-2xl md:text-xl lg:text-2xl font-semibold mb-4">
           {name}
         </h3>
-
+        {/* Social links */}
         <div className="flex gap-3">
           {socialLinks.map((link, index) => (
             <a

@@ -1,9 +1,14 @@
+import ExclusivePlans from "@/components/modules/home/exclusive-plans/ExclusivePlans";
 import HowItWorks from "@/components/modules/home/how-it-works/HowItWorks";
+import SectionDivider from "@/components/shared/SectionDivider";
 
 const Home = () => {
   return (
-    <div className="pt-64 md:pt-28 space-y-20">
+    <div className="pt-64 md:pt-28 ">
       <HowItWorks />
+      <SectionDivider/>
+      <ExclusivePlans />
+      <SectionDivider/>
     </div>
   );
 };
