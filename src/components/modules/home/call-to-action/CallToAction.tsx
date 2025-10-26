@@ -23,7 +23,7 @@ const CallToAction = () => {
          justify-around px-5 md:px-20 gap-10"
         >
           {/* Left: Main CTA */}
-          <div className=" items-center lg:items-left space-y-6 border">
+          <div className=" items-center lg:items-left space-y-6">
             <p className="text-sm font-semibold">
               Available 24/7, Ride whenever you need
             </p>
@@ -36,7 +36,7 @@ const CallToAction = () => {
           </div>
 
           {/* Right: Key Features */}
-          <div className="flex flex-col items-start justify-center space-y-4 border">
+          <div className="flex flex-col items-start justify-center space-y-4">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-3">
                 <CheckCircle size={16} className="text-custom-secondary" />

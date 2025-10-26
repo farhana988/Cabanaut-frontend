@@ -14,7 +14,7 @@ const CommonLayout = ({ children }: IProps) => {
   return (
     <>
       <Navbar />
-      <div className="max-w-[1600px] mx-auto bg-snow-white">
+      <div className="max-w-[1600px] mx-auto bg-snow-white dark:bg-black">
         <div className="relative">{isHomepage && <Banner />}</div>
         <div className="container mx-auto max-w-7xl pt-20 px-5 xl:px-0 min-h-screen">
           {children}

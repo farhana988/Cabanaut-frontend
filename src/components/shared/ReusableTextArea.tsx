@@ -17,7 +17,7 @@ const ReusableTextArea = ({
 }: FormTextareaProps) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block text-lg font-medium text-gray-700">
+      <label htmlFor={id} className="block text-lg font-medium opacity-80">
         {label} <span className="text-red-500">*</span>
       </label>
       <Textarea

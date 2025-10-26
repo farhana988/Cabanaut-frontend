@@ -9,7 +9,7 @@ const ExclusivePlanCard = ({ plan }: ExclusivePlanCardProps) => {
       className={`flex-1 border rounded-lg p-6 md:p-4 lg:p-6 flex flex-col ${
         highlighted
           ? "bg-custom-accent/10 relative md:-top-16 xl:-top-20"
-          : "border-custom-secondary/20"
+          : "border-custom-secondary/20 dark:bg-secondary/30 bg-white"
       }`}
     >
       {highlighted && (

@@ -8,15 +8,14 @@ function ErrorPage() {
 
       <div className="flex justify-center items-center gap-5 ">
         <h2
-          className="text-2xl lg:text-3xl font-semibold text-gray-500 
+          className="text-2xl lg:text-3xl font-semibold opacity-60 
         flex items-center justify-center gap-2"
         >
           Lets get you to <ArrowRight className="mt-2" />
         </h2>
         <span
-          className="text-3xl lg:text-4xl font-bold
-             text-custom-secondary hover:underline hover:underline-offset-8
-            "
+          className="text-3xl lg:text-4xl font-bold text-custom-secondary 
+          dark:text-snow-white/80 hover:underline hover:underline-offset-8"
         >
           <Link to={"/"}>Home! </Link>
         </span>

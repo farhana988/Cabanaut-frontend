@@ -4,6 +4,7 @@ import Contact from "@/pages/Contact";
 import ErrorPage from "@/pages/ErrorPage";
 import Faq from "@/pages/Faq";
 import Features from "@/pages/Features";
+import Pricing from "@/pages/footer/Pricing";
 import Home from "@/pages/Home";
 import { createBrowserRouter } from "react-router";
 
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         Component: Faq,
         path: "/faq",
+      },
+      // footer
+      {
+        Component: Pricing,
+        path: "/pricing",
       },
     ],
   },

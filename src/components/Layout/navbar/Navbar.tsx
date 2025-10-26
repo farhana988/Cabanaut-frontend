@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import NavLinks from "./NavLinks";
 import { useMenuToggle } from "@/hooks/useMenuToggle";
+import ModeToggler from "../ModeToggler";
 
 const Navbar = () => {
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
@@ -12,7 +13,7 @@ const Navbar = () => {
   return (
     <header className="fixed w-full top-1.5 z-50">
       <div
-        className="max-w-[1600px] 2xl:mx-auto bg-custom-secondary text-white
+        className="max-w-[1600px] 2xl:mx-auto bg-custom-secondary text-snow-white
        rounded-full mx-2"
       >
         <nav className="pl-5 xl:pl-8 pr-2 xl:pr-4 relative ">
@@ -32,16 +33,19 @@ const Navbar = () => {
             <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
               <Logo />
             </div>
-
             {/* Right section */}
-            <Link to={"/login"}>
-              <Button
-                size={"sm"}
-                className="bg-snow-white text-black rounded-full font-semibold"
-              >
-                Login
-              </Button>
-            </Link>
+            <div className="flex items-center gap-1">
+              <ModeToggler />
+              <Link to={"/login"}>
+                <Button
+                  size={"sm"}
+                  className="bg-snow-white text-black hover:text-snow-white 
+                  dark:hover:text-black rounded-full font-semibold"
+                >
+                  Login
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu */}
