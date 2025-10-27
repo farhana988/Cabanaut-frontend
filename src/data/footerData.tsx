@@ -33,6 +33,6 @@ export const footerContactItems = [
 ];
 
 export const footerBottomLinks = [
-  { label: "Terms of Use", to: "/terms" },
+  { label: "Terms of Service", to: "/terms" },
   { label: "Privacy Policy", to: "/privacy" },
 ];
