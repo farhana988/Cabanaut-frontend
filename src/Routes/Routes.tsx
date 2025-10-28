@@ -8,6 +8,8 @@ import Pricing from "@/pages/footer/Pricing";
 import PrivacyPolicy from "@/pages/footer/PrivacyPolicy";
 import TermsOfService from "@/pages/footer/TermsOfService";
 import Home from "@/pages/Home";
+import Login from "@/pages/Login";
+import Register from "@/pages/Register";
 import { createBrowserRouter } from "react-router";
 
 const router = createBrowserRouter([
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
         Component: Faq,
         path: "/faq",
       },
+
       // footer
       {
         Component: Pricing,
@@ -50,6 +53,14 @@ const router = createBrowserRouter([
         path: "/privacy",
       },
     ],
+  },
+  {
+    Component: Login,
+    path: "/login",
+  },
+  {
+    Component: Register,
+    path: "/register",
   },
 ]);
 export default router;

@@ -1,18 +1,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { Provider } from "react-redux";
+import { Provider as ReduxProvider } from "react-redux";
 import { RouterProvider } from "react-router";
 import router from "./Routes/Routes";
-import store from "./redux/store";
 import { ThemeProvider } from "./providers/theme.provider";
+import { store } from "./redux/store";
+import { Toaster } from "./components/ui/sonner";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
+    <ReduxProvider store={store}>
       <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <RouterProvider router={router} />
+        <Toaster position="top-center" richColors closeButton />
       </ThemeProvider>
-    </Provider>
+    </ReduxProvider>
   </StrictMode>
 );
