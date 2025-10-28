@@ -39,7 +39,9 @@ const CallToAction = () => {
           <div className="flex flex-col items-start justify-center space-y-4">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-3">
-                <CheckCircle size={16} className="text-custom-secondary" />
+                <CheckCircle
+                  size={16} className="text-custom-secondary dark:text-snow-white"
+                />
                 <span className="text-base font-medium">{feature}</span>
               </div>
             ))}

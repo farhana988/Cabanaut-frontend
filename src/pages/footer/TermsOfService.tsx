@@ -1,7 +1,5 @@
-import ListSection from "@/components/modules/footer/ListSection";
-import Section from "@/components/modules/footer/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
-import { sections } from "@/data/termsData";
+import { termsData } from "@/data/termsData";
 
 const TermsOfService = () => {
   const lastUpdated = new Date().toLocaleDateString();
@@ -9,30 +7,34 @@ const TermsOfService = () => {
   return (
     <>
       <SectionHeader title="Terms of Service" />
-      <p className="mb-4">
-        Welcome to <strong>Cabanaut</strong>. By accessing or using our
-        ride-booking platform, you agree to these Terms of Service (“Terms”).
-        Please read them carefully.
-      </p>
+      <div className="space-y-8">
+        <p className="mb-4">
+          Welcome to <strong>Cabanaut</strong>. By accessing or using our
+          ride-booking platform, you agree to these Terms of Service (“Terms”).
+          Please read them carefully.
+        </p>
 
-      {/* Map */}
-      {sections.map((section, index) =>
-        section.type === "list" ? (
-          <ListSection
-            key={index}
-            title={section.title}
-            items={section.items!}
-          />
-        ) : (
-          <Section
-            key={index}
-            title={section.title}
-            content={section.content!}
-          />
-        )
-      )}
+        {/* Map */}
+        {termsData.map((section, index) => (
+          <div key={index} className="space-y-2">
+            <h2 className="text-xl font-semibold">{section.title}</h2>
 
-      <p className="mt-8 text-sm opacity-70">Last updated: {lastUpdated}</p>
+            {section.type === "text" && (
+              <p className="opacity-80">{section.content}</p>
+            )}
+
+            {section.type === "list" && (
+              <ul className="list-disc list-inside space-y-1 opacity-80">
+                {section.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+
+        <p className=" text-sm opacity-70">Last updated: {lastUpdated}</p>
+      </div>
     </>
   );
 };

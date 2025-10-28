@@ -14,8 +14,8 @@ const ExclusivePlanCard = ({ plan }: ExclusivePlanCardProps) => {
     >
       {highlighted && (
         <div
-          className="absolute -top-8 right-4 transform rotate-12 
-              text-custom-secondary/30"
+          className="absolute -top-8 right-4 transform rotate-12 text-custom-secondary/30
+          dark:text-snow-white/30"
         >
           <Crown size={70} />
         </div>
@@ -25,7 +25,7 @@ const ExclusivePlanCard = ({ plan }: ExclusivePlanCardProps) => {
       {/*  description */}
       <p className="mt-2 text-sm opacity-80">{description}</p>
       {/* price */}
-      <div className="mt-3 lg:mt-6 text-2xl lg:text-4xl font-light">
+      <div className="mt-3 lg:mt-6 text-2xl lg:text-4xl font-semibold">
         <span className="align-top text-xl">$</span>
         {price}
         <span className="text-lg font-normal ml-1">/Hr</span>
@@ -36,7 +36,10 @@ const ExclusivePlanCard = ({ plan }: ExclusivePlanCardProps) => {
       <ul className="space-y-3 flex-1">
         {features.map((feature) => (
           <li key={feature} className="flex items-center space-x-3 text-sm">
-            <CheckCircle className="text-custom-secondary" size={16} />
+            <CheckCircle
+              className="text-custom-secondary dark:text-snow-white"
+              size={16}
+            />
             <span className="opacity-80 text-xs lg:text-base">{feature}</span>
           </li>
         ))}

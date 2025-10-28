@@ -5,6 +5,7 @@ import ErrorPage from "@/pages/ErrorPage";
 import Faq from "@/pages/Faq";
 import Features from "@/pages/Features";
 import Pricing from "@/pages/footer/Pricing";
+import PrivacyPolicy from "@/pages/footer/PrivacyPolicy";
 import TermsOfService from "@/pages/footer/TermsOfService";
 import Home from "@/pages/Home";
 import { createBrowserRouter } from "react-router";
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         Component: TermsOfService,
         path: "/terms",
+      },
+      {
+        Component: PrivacyPolicy,
+        path: "/privacy",
       },
     ],
   },

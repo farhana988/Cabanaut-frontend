@@ -1,4 +1,16 @@
-export const sections = [
+export type TermSection =
+  | {
+      type: "text";
+      title: string;
+      content: string;
+    }
+  | {
+      type: "list";
+      title: string;
+      items: string[];
+    };
+
+export const termsData: TermSection[] = [
   {
     type: "text",
     title: "1. Acceptance of Terms",

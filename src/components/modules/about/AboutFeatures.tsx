@@ -26,7 +26,7 @@ const AboutFeatures = () => {
               <div key={feature} className="flex items-start gap-3">
                 <CheckCircle
                   size={18}
-                  className="text-custom-secondary shrink-0 mt-1"
+                  className="text-custom-secondary dark:text-snow-white shrink-0 mt-1"
                 />
                 <span className="text-sm xl:text-base leading-relaxed">
                   {feature}
