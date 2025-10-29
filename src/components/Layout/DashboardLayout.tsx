@@ -1,9 +1,13 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar";
 import { Separator } from "../ui/separator";
 import { AppSidebar } from "../app-sidebar";
+import DashboardWelcome from "./DashboardWelcome";
 
 const DashboardLayout = () => {
+   const location = useLocation();
+  const path = location.pathname;
+   const isBaseDashboardRoute = ["/admin", "/rider", "/driver"].includes(path);
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -16,7 +20,11 @@ const DashboardLayout = () => {
           />
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
-          <Outlet />
+           {isBaseDashboardRoute ? (
+            <DashboardWelcome />
+          ) : (
+            <Outlet />
+          )}
         </div>
       </SidebarInset>
     </SidebarProvider>

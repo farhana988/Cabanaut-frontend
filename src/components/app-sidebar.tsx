@@ -25,15 +25,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   };
   return (
     <Sidebar {...props}>
-      <SidebarHeader>
+      <SidebarHeader className="bg-custom-secondary text-snow-white">
         <Logo />
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="bg-custom-secondary">
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
+            <SidebarGroupLabel className="text-snow-white">
+              {item.title}
+            </SidebarGroupLabel>
+            <SidebarGroupContent className="text-snow-white">
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
