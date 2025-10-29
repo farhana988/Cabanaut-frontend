@@ -1,11 +1,10 @@
 import Hamburger from "./Hamburger";
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
-import { Link } from "react-router";
-import { Button } from "@/components/ui/button";
 import NavLinks from "./NavLinks";
 import { useMenuToggle } from "@/hooks/useMenuToggle";
 import ModeToggler from "../ModeToggler";
+import AuthButton from "./AuthButton";
 
 const Navbar = () => {
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
@@ -36,15 +35,7 @@ const Navbar = () => {
             {/* Right section */}
             <div className="flex items-center gap-1">
               <ModeToggler />
-              <Link to={"/login"}>
-                <Button
-                  size={"sm"}
-                  className="bg-snow-white text-black hover:text-snow-white 
-                  dark:hover:text-black rounded-full font-semibold"
-                >
-                  Login
-                </Button>
-              </Link>
+              <AuthButton />
             </div>
           </div>
 
