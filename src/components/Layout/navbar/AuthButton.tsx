@@ -6,12 +6,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { role } from "@/constants/role";
 import { authApi, useLogoutMutation } from "@/redux/feature/auth/auth.api";
 import { useUserInfoQuery } from "@/redux/feature/user/user.api";
 import { useAppDispatch } from "@/redux/hook";
-import { User } from "lucide-react";
+import { LogOut, User } from "lucide-react";
 import { Link } from "react-router";
-
+const dashboardLinks = [
+  { href: "/admin", label: "Dashboard", role: role.superAdmin },
+  { href: "/rider", label: "Dashboard", role: role.rider },
+  { href: "/driver", label: "Dashboard", role: role.driver },
+];
 const AuthButton = () => {
   const { data } = useUserInfoQuery(undefined);
   const [logout] = useLogoutMutation();
@@ -49,10 +54,18 @@ const AuthButton = () => {
             align="end"
             className="w-40 bg-custom-secondary mt-2 border-none text-snow-whites"
           >
-            <DropdownMenuItem>
-              <Link to={"/dashboard"}>Dashboard</Link>
+            {dashboardLinks
+              .filter((link) => link.role === user?.role)
+              .map((link) => (
+                <DropdownMenuItem key={link.href}>
+                  <Link to={link.href}>{link.label}</Link>
+                </DropdownMenuItem>
+              ))}
+
+            <DropdownMenuItem onClick={handleLogout}>
+              <LogOut className="h-4 w-4" />
+              <span className="text-error font-bold">Logout</span>
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (

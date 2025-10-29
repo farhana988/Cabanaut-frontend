@@ -45,6 +45,7 @@
   --color-custom-secondary: var(--custom-secondary);
   --color-custom-accent: var(--custom-accent);
   --color-snow-white: var(--snow-white);
+  --color-error: var(--error);
 }
 
 :root {
@@ -84,6 +85,7 @@
   --custom-secondary: #1e293b;
   --custom-accent: #06b6d4;
   --snow-white: #f9fafb;
+  --error: #EF4444;
 }
 
 .dark {
