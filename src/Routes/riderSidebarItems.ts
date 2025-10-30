@@ -3,21 +3,7 @@ import RideHistory from "@/pages/rider/RideHistory";
 import type { ISidebarItems } from "@/types/sidebar.type";
 
 export const riderSidebarItems: ISidebarItems[] = [
-  {
-    title: "Profile",
-    items: [
-      // {
-      //   title: "Profile",
-      //   url: "/rider/profile",
-      //   component: Profile,
-      // },
-      // {
-      //   title: "Edit Profile ",
-      //   url: "/rider/edit-profile",
-      //   component: UpdateProfile,
-      // },
-    ],
-  },
+ 
   {
     title: "Ride",
     items: [

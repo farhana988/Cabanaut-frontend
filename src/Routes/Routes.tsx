@@ -11,6 +11,7 @@ import { role } from "@/constants/role";
 import type { TRole } from "@/types/sidebar.type";
 import { publicRoutes } from "./publicRoutes";
 import { authRoutes } from "./authRoutes";
+import { userSidebarItems } from "./userSidebarItem";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
     path: "/",
     errorElement: <ErrorPage />,
     children: publicRoutes,
+  },
+  {
+    Component: DashboardLayout,
+    path: "/user",
+    children: [...generateRoutes(userSidebarItems)],
   },
   {
     Component: withAuth(DashboardLayout, role.superAdmin as TRole),
