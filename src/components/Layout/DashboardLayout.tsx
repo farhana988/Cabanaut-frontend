@@ -5,9 +5,9 @@ import { AppSidebar } from "../app-sidebar";
 import DashboardWelcome from "./DashboardWelcome";
 
 const DashboardLayout = () => {
-   const location = useLocation();
+  const location = useLocation();
   const path = location.pathname;
-   const isBaseDashboardRoute = ["/admin", "/rider", "/driver"].includes(path);
+  const isBaseDashboardRoute = ["/admin", "/rider", "/driver"].includes(path);
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -19,12 +19,8 @@ const DashboardLayout = () => {
             className="mr-2 data-[orientation=vertical]:h-4"
           />
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4">
-           {isBaseDashboardRoute ? (
-            <DashboardWelcome />
-          ) : (
-            <Outlet />
-          )}
+        <div className="flex flex-1 flex-col gap-4 p-5 bg-snow-white dark:bg-black">
+          {isBaseDashboardRoute ? <DashboardWelcome /> : <Outlet />}
         </div>
       </SidebarInset>
     </SidebarProvider>

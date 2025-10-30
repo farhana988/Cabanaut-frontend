@@ -85,7 +85,7 @@
   --custom-secondary: #1e293b;
   --custom-accent: #06b6d4;
   --snow-white: #f9fafb;
-  --error: #EF4444;
+  --error: #ef4444;
 }
 
 .dark {
@@ -139,4 +139,33 @@
   font-family: "Gotu", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+/* loading page  */
+@keyframes bounce-high {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.bounce-high {
+  animation: bounce-high 1.6s infinite;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+.delay-10 {
+  animation-delay: 1s;
+}
+.delay-15 {
+  animation-delay: 1.5s;
 }

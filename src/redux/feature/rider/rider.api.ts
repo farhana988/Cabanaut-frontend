@@ -20,7 +20,7 @@ export const riderApi = baseApi.injectEndpoints({
     }),
     getViewRideHistory: builder.query({
       query: () => ({
-        url: "/ride/view-ride-history",
+        url: "/ride/ride-history",
         method: "GET",
       }),
       providesTags: ["RIDER"],
