@@ -14,7 +14,7 @@ export const riderApi = baseApi.injectEndpoints({
       query: ({ id, status }) => ({
         url: `/ride/cancel/${id}`,
         method: "PATCH",
-        body: { status },
+        data: { status },
       }),
       invalidatesTags: ["RIDE"],
     }),
@@ -23,7 +23,7 @@ export const riderApi = baseApi.injectEndpoints({
         url: "/ride/ride-history",
         method: "GET",
       }),
-      providesTags: ["RIDER"],
+      providesTags: ["RIDER", "RIDE"],
     }),
   }),
 });

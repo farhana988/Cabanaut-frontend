@@ -41,7 +41,7 @@ export const useBookRide = () => {
           "Ride booked successfully!",
           "Please wait for a driver to arrive at your pickup location."
         );
-        navigate("/rider/history")
+        navigate("/rider/cancel-ride");
         return true;
       } else {
         showErrorToast("Failed to book ride. Please try again.");

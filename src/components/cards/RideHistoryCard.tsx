@@ -43,7 +43,7 @@ const RideHistoryCard = ({ ride }: RideHistoryCardProps) => {
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
             <p className="text-muted-foreground">Fare</p>
-            <p className="font-semibold">{(fare * 100).toFixed(0)} TK</p>
+            <p className="font-semibold">{(fare * 10).toFixed(0)} TK</p>
           </div>
           <div>
             <p className="text-muted-foreground">Requested At</p>

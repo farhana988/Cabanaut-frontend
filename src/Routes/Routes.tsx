@@ -4,7 +4,7 @@ import ErrorPage from "@/pages/ErrorPage";
 import { generateRoutes } from "@/utils/generateRoutes";
 import { createBrowserRouter } from "react-router";
 import { adminSidebarItems } from "./adminSidebarItems";
-import { userSidebarItems } from "./userSidebarItems";
+import { riderSidebarItems } from "./riderSidebarItems";
 import { driverSidebarItems } from "./driverSidebarItems";
 import { withAuth } from "@/utils/withAuth";
 import { role } from "@/constants/role";
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
   {
     Component: withAuth(DashboardLayout, role.rider as TRole),
     path: "/rider",
-    children: [...generateRoutes(userSidebarItems)],
+    children: [...generateRoutes(riderSidebarItems)],
   },
   {
     Component: withAuth(DashboardLayout, role.driver as TRole),
