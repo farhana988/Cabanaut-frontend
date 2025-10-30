@@ -46,10 +46,12 @@ const AuthButton = () => {
             {dashboardLinks
               .filter((link) => link.role === user?.role)
               .map((link) => (
-                <DropdownMenuItem key={link.href}>
-                  <Link to={link.href} className="text-snow-white">
-                    {link.label}
-                  </Link>
+                <DropdownMenuItem
+                  key={link.href}
+                  asChild
+                  className="text-snow-white hover:text-black cursor-pointer"
+                >
+                  <Link to={link.href}>{link.label}</Link>
                 </DropdownMenuItem>
               ))}
 

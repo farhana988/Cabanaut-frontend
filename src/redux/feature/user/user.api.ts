@@ -3,11 +3,12 @@ import { baseApi } from "@/redux/baseApi";
 const userApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     updateProfile: builder.mutation({
-      query: (updateInfo) => ({
-        url: "/user/update-profile",
+      query: ({ id, userData }) => ({
+        url: `/user/${id}`,
         method: "PATCH",
-        data: updateInfo,
+        data: userData,
       }),
+      invalidatesTags: ["USER"],
     }),
     userInfo: builder.query({
       query: () => ({

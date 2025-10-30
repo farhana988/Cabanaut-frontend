@@ -19,6 +19,7 @@ interface FormFieldInputProps {
   control: Control<any>;
   type?: string;
   description?: string;
+  defaultValue?: string;
   rules?: any;
 }
 
@@ -30,6 +31,7 @@ export const FormFieldInput = ({
   type = "text",
   description,
   rules,
+  defaultValue,
 }: FormFieldInputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -53,7 +55,7 @@ export const FormFieldInput = ({
                 {...field}
                 type={isPasswordField && showPassword ? "text" : type}
                 placeholder={placeholder}
-                value={field.value || ""}
+                value={field.value || defaultValue || ""}
                 className={isPasswordField ? "pr-10" : ""}
               />
               {isPasswordField && (

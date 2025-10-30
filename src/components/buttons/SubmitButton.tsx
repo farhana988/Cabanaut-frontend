@@ -18,7 +18,7 @@ const SubmitButton = ({
       type="submit"
       size={"sm"}
       className={cn(
-        ` bg-custom-secondary text-white rounded-full font-semibold w-full`,
+        ` bg-custom-secondary text-white dark:hover:text-black rounded-full font-semibold w-full`,
         className
       )}
       disabled={isLoading || props.disabled}

@@ -19,7 +19,7 @@ const UserProfile = () => {
     <div className=" relative ">
       <SectionHeader title="User Information" />
       <Card>
-        <CardHeader className="flex text-center">
+        <CardHeader className="flex items-center">
           <Avatar className="w-24 h-24">
             <AvatarImage
               src={user?.picture || defaultAvatar}
@@ -30,9 +30,7 @@ const UserProfile = () => {
             </AvatarFallback>
           </Avatar>
           <div>
-            <CardTitle className="mt-4 text-2xl font-bold ">
-              {user?.name}
-            </CardTitle>
+            <CardTitle className="text-2xl font-bold ">{user?.name}</CardTitle>
             <Badge variant="picked_up" className="mt-2">
               {user?.role}
             </Badge>
