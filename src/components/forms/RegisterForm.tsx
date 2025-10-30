@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
@@ -7,7 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormFieldInput } from "../shared/FormField";
 import { useAuth } from "@/hooks/useAuth";
-import SpinnerButton from "../buttons/SpinnerButton";
+import SubmitButton from "../buttons/SubmitButton";
 
 const registerSchema = z
   .object({
@@ -104,9 +103,7 @@ const RegisterForm = ({
               placeholder="****************"
             />
 
-            <Button type="submit" className="w-full">
-              {isRegistering ? <SpinnerButton /> : "Register"}
-            </Button>
+            <SubmitButton text="Register" isLoading={isRegistering} />
           </form>
         </Form>
       </div>

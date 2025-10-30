@@ -6,9 +6,11 @@ import Faq from "@/pages/Faq";
 import Pricing from "@/pages/footer/Pricing";
 import TermsOfService from "@/pages/footer/TermsOfService";
 import PrivacyPolicy from "@/pages/footer/PrivacyPolicy";
+import BookARide from "@/pages/BookARide";
 
 export const publicRoutes = [
   { Component: Home, path: "/" },
+  { Component: BookARide, path: "/book-ride" },
   { Component: About, path: "about" },
   { Component: Features, path: "features" },
   { Component: Contact, path: "contact" },

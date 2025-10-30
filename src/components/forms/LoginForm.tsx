@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
 import { FormFieldInput } from "../shared/FormField";
 import { useAuth } from "@/hooks/useAuth";
-import SpinnerButton from "../buttons/SpinnerButton";
+import SubmitButton from "../buttons/SubmitButton";
 
 const LoginForm = ({
   className,
@@ -34,6 +33,7 @@ const LoginForm = ({
               name="email"
               label="Email"
               placeholder="john@example.com"
+              rules={{ required: "Email is required" }}
             />
 
             <FormFieldInput
@@ -42,11 +42,10 @@ const LoginForm = ({
               label="Password"
               type="password"
               placeholder="********"
+              rules={{ required: "Password is required" }}
             />
 
-            <Button type="submit" className="w-full">
-              {isLoggingIn ? <SpinnerButton /> : "Login"}
-            </Button>
+            <SubmitButton text="Login" isLoading={isLoggingIn} />
           </form>
         </Form>
       </div>

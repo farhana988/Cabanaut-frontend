@@ -10,7 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { type Control } from "react-hook-form";
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react"; 
+import { Eye, EyeOff } from "lucide-react";
 
 interface FormFieldInputProps {
   name: string;
@@ -19,6 +19,7 @@ interface FormFieldInputProps {
   control: Control<any>;
   type?: string;
   description?: string;
+  rules?: any;
 }
 
 export const FormFieldInput = ({
@@ -28,6 +29,7 @@ export const FormFieldInput = ({
   control,
   type = "text",
   description,
+  rules,
 }: FormFieldInputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -41,6 +43,7 @@ export const FormFieldInput = ({
     <FormField
       control={control}
       name={name}
+      rules={rules}
       render={({ field }) => (
         <FormItem>
           <FormLabel>{label}</FormLabel>
