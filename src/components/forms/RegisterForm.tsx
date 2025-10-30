@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRegisterMutation } from "@/redux/feature/auth/auth.api";
 import { FormFieldInput } from "../shared/FormField";
-import { showErrorToast, showSuccessToast } from "@/utils/toast";
+import { useAuth } from "@/hooks/useAuth";
+import SpinnerButton from "../buttons/SpinnerButton";
+
 const registerSchema = z
   .object({
     name: z
@@ -17,21 +18,32 @@ const registerSchema = z
       })
       .max(50),
     email: z.email(),
-    password: z.string().min(8, { error: "Password is too short" }),
-    confirmPassword: z
+    password: z
       .string()
-      .min(8, { error: "Confirm Password is too short" }),
+      .min(8, { error: "Password must be at least 8 characters long." })
+      .regex(/^(?=.*[A-Z])/, {
+        message: "Password must contain at least 1 uppercase letter.",
+      })
+      .regex(/^(?=.*[!@#$%^&*])/, {
+        message: "Password must contain at least 1 special character.",
+      })
+      .regex(/^(?=.*\d)/, {
+        message: "Password must contain at least 1 number.",
+      }),
+    confirmPassword: z.string().min(8, {
+      error: "Confirm Password must be at least 8 characters long.",
+    }),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Password do not match",
     path: ["confirmPassword"],
   });
+
 const RegisterForm = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  const [register] = useRegisterMutation();
-  const navigate = useNavigate();
+  const { handleRegister, isRegistering } = useAuth();
 
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -44,28 +56,14 @@ const RegisterForm = ({
   });
 
   const onSubmit = async (data: z.infer<typeof registerSchema>) => {
-    const userInfo = {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    };
-
+    const { name, email, password } = data;
     try {
-      const result = await register(userInfo).unwrap();
-      console.log(result);
-      showSuccessToast(
-        "Registration Successful",
-        `Welcome, ${result.name || "user"}! Your account has been created.`
-      );
-      navigate("/login");
-    } catch (error) {
-      console.error(error);
-      showErrorToast(
-        "Registration Failed",
-        "Something went wrong. Please try again."
-      );
+      await handleRegister({ name, email, password });
+    } catch (err) {
+      console.error(err);
     }
   };
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <div className="flex flex-col items-center gap-2 text-center">
@@ -107,7 +105,7 @@ const RegisterForm = ({
             />
 
             <Button type="submit" className="w-full">
-              Submit
+              {isRegistering ? <SpinnerButton /> : "Register"}
             </Button>
           </form>
         </Form>

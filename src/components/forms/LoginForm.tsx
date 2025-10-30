@@ -1,33 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
-import { useLoginMutation } from "@/redux/feature/auth/auth.api";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { FormFieldInput } from "../shared/FormField";
-import { showErrorToast, showSuccessToast } from "@/utils/toast";
+import { useAuth } from "@/hooks/useAuth";
+import SpinnerButton from "../buttons/SpinnerButton";
+
 const LoginForm = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  const navigate = useNavigate();
   const form = useForm();
-  const [login] = useLoginMutation();
+  const { handleLogin, isLoggingIn } = useAuth();
+
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    console.log(data);
-    try {
-      const result = await login(data).unwrap();
-      showSuccessToast(
-        "Login Successful",
-        `Welcome back, ${result.name || "user"}!`
-      );
-      console.log(result);
-      navigate("/");
-    } catch (err) {
-      console.error(err);
-      showErrorToast("Login Failed", "Invalid email or password.");
-    }
+    await handleLogin(data as { email: string; password: string });
   };
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <div className="flex flex-col items-center gap-2 text-center">
@@ -55,7 +45,7 @@ const LoginForm = ({
             />
 
             <Button type="submit" className="w-full">
-              Login
+              {isLoggingIn ? <SpinnerButton /> : "Login"}
             </Button>
           </form>
         </Form>

@@ -6,27 +6,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { role } from "@/constants/role";
-import { authApi, useLogoutMutation } from "@/redux/feature/auth/auth.api";
-import { useUserInfoQuery } from "@/redux/feature/user/user.api";
-import { useAppDispatch } from "@/redux/hook";
+import { dashboardLinks } from "@/data/dashboardLinks";
+import { useAuth } from "@/hooks/useAuth";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { LogOut, User } from "lucide-react";
 import { Link } from "react-router";
-const dashboardLinks = [
-  { href: "/admin", label: "Dashboard", role: role.superAdmin },
-  { href: "/rider", label: "Dashboard", role: role.rider },
-  { href: "/driver", label: "Dashboard", role: role.driver },
-];
-const AuthButton = () => {
-  const { data } = useUserInfoQuery(undefined);
-  const [logout] = useLogoutMutation();
-  const dispatch = useAppDispatch();
 
-  const handleLogout = async () => {
-    await logout(undefined);
-    dispatch(authApi.util.resetApiState());
-  };
-  const user = data?.data;
+const AuthButton = () => {
+  const { user } = useCurrentUser();
+  const { handleLogout } = useAuth();
+
   const defaultAvatar = "/src/assets/images/defaultUser.png";
   return (
     <>

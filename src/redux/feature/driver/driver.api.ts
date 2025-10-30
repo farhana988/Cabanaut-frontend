@@ -2,7 +2,7 @@ import { baseApi } from "@/redux/baseApi";
 
 export const driverApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    register: builder.mutation({
+    driverRegister: builder.mutation({
       query: (driverInfo) => ({
         url: "/driver/register",
         method: "POST",
@@ -52,7 +52,7 @@ export const driverApi = baseApi.injectEndpoints({
 });
 
 export const {
-  useRegisterMutation,
+  useDriverRegisterMutation,
   useDriverOnlineStatusMutation,
   useAcceptRideMutation,
   useRejectRideMutation,

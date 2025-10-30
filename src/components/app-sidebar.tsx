@@ -15,14 +15,15 @@ import {
 import Logo from "./Layout/navbar/Logo";
 import { Link } from "react-router";
 import { getSidebarItems } from "@/utils/getSidebarItems";
-import { useUserInfoQuery } from "@/redux/feature/user/user.api";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   // This is sample data.
-  const { data: userData } = useUserInfoQuery(undefined);
+  const { user } = useCurrentUser();
   const data = {
-    navMain: getSidebarItems(userData?.data?.role),
+    navMain: getSidebarItems(user?.role),
   };
+
   return (
     <Sidebar {...props}>
       <SidebarHeader className="bg-custom-secondary text-snow-white">
