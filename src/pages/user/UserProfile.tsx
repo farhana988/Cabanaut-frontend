@@ -1,3 +1,4 @@
+import FormattedDateTime from "@/components/shared/FormattedDateTime";
 import LoadingPage from "@/components/shared/LoadingPage";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -70,12 +71,7 @@ const UserProfile = () => {
 
             <div className="flex gap-2 ">
               <p className="font-medium text-lg">Joined: </p>
-
-              {new Date(user.createdAt).toLocaleDateString("en-US", {
-                month: "numeric",
-                day: "numeric",
-                year: "2-digit",
-              })}
+              <FormattedDateTime datetime={user.createdAt} showTime={false} />
             </div>
           </section>
           <div className="flex gap-2 ">

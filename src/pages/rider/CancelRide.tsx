@@ -22,7 +22,7 @@ const CancelRide = () => {
 
   return (
     <>
-      {rides.length ? (
+      {rides.length > 0 ? (
         <div className="space-y-5">
           <SectionHeader title="Cancel A Ride" />
 

@@ -1,5 +1,5 @@
 import { useManageRides } from "@/hooks/useManageRides";
-import type {RideCardProps } from "@/types/ride.type";
+import type { RideCardProps } from "@/types/ride.type";
 import {
   MapPin,
   Navigation,
@@ -18,6 +18,7 @@ import {
 import { statusBadgeVariant } from "@/constants/statusBadgeVariant";
 import { Badge } from "../ui/badge";
 import RideStatusButton from "../buttons/RideStatusButton";
+import FormattedDateTime from "../shared/FormattedDateTime";
 
 const ManageRideCards = ({ ride }: RideCardProps) => {
   const { handleAccept, handleReject, handleUpdateStatus } = useManageRides();
@@ -55,19 +56,9 @@ const ManageRideCards = ({ ride }: RideCardProps) => {
             {(fare * 10).toFixed(0)} Tk.
           </span>
         </div>
-        <div className="flex items-center space-x-2 opacity-70">
+        <div className="flex items-center space-x-2 opacity-70 ">
           <Clock className="h-4 w-4" />
-          <p className="font-semibold">
-            {new Date(timestampsLog.requestedAt).toLocaleTimeString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}{" "}
-            {new Date(timestampsLog.requestedAt).toLocaleDateString("en-US", {
-              month: "numeric",
-              day: "numeric",
-              year: "2-digit",
-            })}
-          </p>
+          <FormattedDateTime datetime={timestampsLog.requestedAt} />
         </div>
         <div className="flex items-center space-x-2">
           {driver ? (

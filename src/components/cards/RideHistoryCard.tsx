@@ -4,6 +4,7 @@ import { MapPin, MapPinned } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { statusBadgeVariant } from "@/constants/statusBadgeVariant";
 import type { RideCardProps } from "@/types/ride.type";
+import FormattedDateTime from "../shared/FormattedDateTime";
 
 const RideHistoryCard = ({ ride }: RideCardProps) => {
   const { status, pickupLocation, destinationLocation, fare, timestampsLog } =
@@ -48,15 +49,7 @@ const RideHistoryCard = ({ ride }: RideCardProps) => {
           <div>
             <p className="text-muted-foreground">Requested At</p>
             <p className="font-semibold">
-              {new Date(timestampsLog.requestedAt).toLocaleTimeString("en-US", {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}{" "}
-              {new Date(timestampsLog.requestedAt).toLocaleDateString("en-US", {
-                month: "numeric",
-                day: "numeric",
-                year: "2-digit",
-              })}
+              <FormattedDateTime datetime={timestampsLog.requestedAt} />
             </p>
           </div>
         </div>
