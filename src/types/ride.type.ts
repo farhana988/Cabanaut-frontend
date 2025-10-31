@@ -30,6 +30,13 @@ export interface IRide {
   };
 }
 
-export interface RideHistoryCardProps {
+export interface RideCardProps {
   ride: IRide;
+}
+
+export interface RideStatusButtonProps {
+  ride: IRide;
+  onAccept: (id: string) => void;
+  onReject: (id: string) => void;
+  onUpdateStatus: (id: string, status: string) => void;
 }

@@ -35,9 +35,9 @@ export const driverApi = baseApi.injectEndpoints({
     }),
     updateRideStatus: builder.mutation({
       query: ({ id, status }) => ({
-        url: `/driver/status/${id}`,
+        url: `/driver/update-status/${id}`,
         method: "PATCH",
-        body: { status },
+        data: { status },
       }),
       invalidatesTags: ["RIDE"],
     }),

@@ -3,9 +3,9 @@ import { Separator } from "@/components/ui/separator";
 import { MapPin, MapPinned } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { statusBadgeVariant } from "@/constants/statusBadgeVariant";
-import type { RideHistoryCardProps } from "@/types/ride.type";
+import type { RideCardProps } from "@/types/ride.type";
 
-const RideHistoryCard = ({ ride }: RideHistoryCardProps) => {
+const RideHistoryCard = ({ ride }: RideCardProps) => {
   const { status, pickupLocation, destinationLocation, fare, timestampsLog } =
     ride || {};
   return (

@@ -10,6 +10,7 @@ export const riderApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["RIDE"],
     }),
+
     cancelRide: builder.mutation({
       query: ({ id, status }) => ({
         url: `/ride/cancel/${id}`,
@@ -18,12 +19,21 @@ export const riderApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["RIDE"],
     }),
+
     getViewRideHistory: builder.query({
       query: () => ({
         url: "/ride/ride-history",
         method: "GET",
       }),
       providesTags: ["RIDER", "RIDE"],
+    }),
+
+    getAllRideList: builder.query({
+      query: () => ({
+        url: "/ride/all-rides-list",
+        method: "GET",
+      }),
+      providesTags: ["RIDE"],
     }),
   }),
 });
@@ -32,4 +42,5 @@ export const {
   useBookingRideMutation,
   useCancelRideMutation,
   useGetViewRideHistoryQuery,
+  useGetAllRideListQuery,
 } = riderApi;
