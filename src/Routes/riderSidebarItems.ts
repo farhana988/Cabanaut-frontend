@@ -1,9 +1,9 @@
+import DriverRegister from "@/pages/driver/DriverRegister";
 import CancelRide from "@/pages/rider/CancelRide";
 import RideHistory from "@/pages/rider/RideHistory";
 import type { ISidebarItems } from "@/types/sidebar.type";
 
 export const riderSidebarItems: ISidebarItems[] = [
- 
   {
     title: "Ride",
     items: [
@@ -16,6 +16,16 @@ export const riderSidebarItems: ISidebarItems[] = [
         title: "Cancel A Ride",
         url: "/rider/cancel-ride",
         component: CancelRide,
+      },
+    ],
+  },
+  {
+    title: "Become a Driver",
+    items: [
+      {
+        title: "Register As Driver",
+        url: "/rider/register-as-driver",
+        component: DriverRegister,
       },
     ],
   },
