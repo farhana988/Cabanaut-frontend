@@ -16,7 +16,6 @@ import Logo from "./Layout/navbar/Logo";
 import { Link } from "react-router";
 import { getSidebarItems } from "@/utils/getSidebarItems";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
-import ModeToggler from "./Layout/ModeToggler";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   // This is sample data.
@@ -28,10 +27,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader className="bg-custom-secondary text-snow-white ">
-        <div className="flex justify-between items-center">
-          <Logo />
-          <ModeToggler />
-        </div>
+        <Logo />
       </SidebarHeader>
       <SidebarContent className="bg-custom-secondary min-h-screen">
         {/* We create a SidebarGroup for each parent. */}
