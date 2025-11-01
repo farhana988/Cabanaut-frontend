@@ -1,3 +1,4 @@
+import DriverEarningsChart from "@/components/modules/dashboard/driver/DriverEarningsChart";
 import LoadingPage from "@/components/shared/LoadingPage";
 import NoDataFound from "@/components/shared/NoDataFound";
 import SectionHeader from "@/components/shared/SectionHeader";
@@ -12,10 +13,19 @@ import {
 } from "@/components/ui/table";
 import { useGetDriverEarningHistoryQuery } from "@/redux/feature/driver/driver.api";
 import type { IDriverRide } from "@/types/driver.type";
+import {
+  getDailyData,
+  getMonthlyData,
+  getWeeklyData,
+} from "@/utils/driverEarningsChart";
 
 const DriverEarning = () => {
   const { data, isLoading } = useGetDriverEarningHistoryQuery(undefined);
   const rides = data?.data?.rides || [];
+
+  const dailyData = getDailyData(rides);
+  const weeklyData = getWeeklyData(rides);
+  const monthlyData = getMonthlyData(rides);
 
   if (isLoading)
     return <LoadingPage message="Loading your earning history..." />;
@@ -35,6 +45,12 @@ const DriverEarning = () => {
           </p>
         </CardContent>
       </Card>
+      {/* Earnings Visualization */}
+      <DriverEarningsChart
+        dailyData={dailyData}
+        weeklyData={weeklyData}
+        monthlyData={monthlyData}
+      />
 
       <SectionHeader title="Earning Details" />
       {rides.length > 0 ? (
