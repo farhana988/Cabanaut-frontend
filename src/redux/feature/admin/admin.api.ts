@@ -9,6 +9,7 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["ADMIN"],
     }),
+
     blockUser: builder.mutation({
       query: (id) => ({
         url: `/user/block-user/${id}`,
@@ -16,6 +17,7 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["ADMIN"],
     }),
+
     driverSuspendStatus: builder.mutation({
       query: (id) => ({
         url: `/user/suspended-driver-status/${id}`,

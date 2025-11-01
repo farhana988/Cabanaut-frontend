@@ -14,11 +14,12 @@ import type { IUser } from "@/types/user.type";
 
 const UserManagement = () => {
   const { data, isLoading } = useGetAllUsersQuery(undefined);
-  console.log(data?.data);
   const user = data?.data;
+
   if (isLoading) {
     return <LoadingPage></LoadingPage>;
   }
+
   return (
     <>
       <SectionHeader title=" User Management" />

@@ -17,7 +17,7 @@ const DashboardWelcome = () => {
         <Link to="/">
           <Button variant="secondary">Go Home</Button>
         </Link>
-        <Link to="/profile">
+        <Link to="/user/user-profile">
           <Button>View Profile</Button>
         </Link>
       </div>

@@ -1,11 +1,19 @@
 import { useBookRide } from "@/hooks/useBookRide";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { Controller, useForm, type SubmitHandler } from "react-hook-form";
 import { FormFieldInput } from "../shared/FormField";
 import { Form } from "@/components/ui/form";
 import SubmitButton from "../buttons/SubmitButton";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 export type BookRideFormValues = {
   pickupAddress: string;
   destinationAddress: string;
+  paymentMethod: string;
 };
 
 const BookRideForm = () => {
@@ -19,10 +27,7 @@ const BookRideForm = () => {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-6"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormFieldInput
           control={form.control}
           name="pickupAddress"
@@ -38,7 +43,25 @@ const BookRideForm = () => {
           placeholder="Enter your destination"
           rules={{ required: "Destination address is required" }}
         />
-
+        {/* Payment Method Select */}
+        <Controller
+          name="paymentMethod"
+          control={form.control}
+          rules={{ required: "Payment method is required" }}
+          render={({ field }) => (
+            <div className="flex flex-col ">
+              <label className="mb-2 text-sm font-medium">Payment Method</label>
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select a payment method" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="cash">Cash</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          )}
+        />
         <SubmitButton text="Book Ride" isLoading={isLoading} />
       </form>
     </Form>

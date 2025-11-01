@@ -40,3 +40,15 @@ export interface RideStatusButtonProps {
   onReject: (id: string) => void;
   onUpdateStatus: (id: string, status: string) => void;
 }
+
+
+export interface RideFiltersProps {
+  search: string;
+  setSearch: (value: string) => void;
+  statusFilter: string | "";
+  setStatusFilter: (value: string) => void;
+  fareRange: [number, number];
+  setFareRange: (value: [number, number]) => void;
+  dateRange: [Date | null, Date | null];
+  setDateRange: (value: [Date | null, Date | null]) => void;
+}

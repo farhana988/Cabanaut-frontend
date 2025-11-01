@@ -33,7 +33,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <ModeToggler />
         </div>
       </SidebarHeader>
-      <SidebarContent className="bg-custom-secondary">
+      <SidebarContent className="bg-custom-secondary min-h-screen">
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
