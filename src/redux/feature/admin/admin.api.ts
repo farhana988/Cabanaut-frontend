@@ -9,6 +9,13 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["ADMIN"],
     }),
+    blockUser: builder.mutation({
+      query: (id) => ({
+        url: `/user/block-user/${id}`,
+        method: "PATCH",
+      }),
+      invalidatesTags: ["ADMIN"],
+    }),
     driverSuspendStatus: builder.mutation({
       query: (id) => ({
         url: `/user/suspended-driver-status/${id}`,
@@ -24,7 +31,7 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       providesTags: ["ADMIN"],
     }),
-    
+
     getAllUsers: builder.query({
       query: () => ({
         url: "/user/all-users",
@@ -39,5 +46,6 @@ export const {
   useGetAllDriversQuery,
   useDriverApprovedStatusMutation,
   useDriverSuspendStatusMutation,
-  useGetAllUsersQuery
+  useGetAllUsersQuery,
+  useBlockUserMutation,
 } = adminApi;

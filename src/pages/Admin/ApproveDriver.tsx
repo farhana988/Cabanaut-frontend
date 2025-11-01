@@ -1,4 +1,5 @@
 import LoadingPage from "@/components/shared/LoadingPage";
+import NoDataFound from "@/components/shared/NoDataFound";
 import SectionHeader from "@/components/shared/SectionHeader";
 import ApproveDriverTable from "@/components/tables/ApproveDriverTable";
 import {
@@ -13,40 +14,44 @@ import type { IDriver } from "@/types/driver.type";
 
 const ApproveDriver = () => {
   const { matchedDrivers, isLoading } = useMatchedDrivers();
-
+  console.log(matchedDrivers);
   if (isLoading) {
     return <LoadingPage></LoadingPage>;
   }
   return (
-    <div>
+    <>
       <SectionHeader title=" Approve As Driver" />
-      <Table>
-        <TableHeader>
-          <TableRow>
-            {[
-              "Driver Name",
-              "Email",
-              "Vehicle Type",
-              "Vehicle Model",
-              "Vehicle Number",
-              "NID No.",
-              "Status",
-              "Action",
-            ].map((header, index) => (
-              <TableHead className="text-center" key={index}>
-                {" "}
-                {header}
-              </TableHead>
+      {matchedDrivers.length > 0 ? (
+        <Table>
+          <TableHeader>
+            <TableRow>
+              {[
+                "Driver Name",
+                "Email",
+                "Vehicle Type",
+                "Vehicle Model",
+                "Vehicle Number",
+                "NID No.",
+                "Status",
+                "Action",
+              ].map((header, index) => (
+                <TableHead className="text-center" key={index}>
+                  {" "}
+                  {header}
+                </TableHead>
+              ))}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {matchedDrivers?.map((driver: IDriver) => (
+              <ApproveDriverTable key={driver._id} driver={driver} />
             ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {matchedDrivers?.map((driver: IDriver) => (
-            <ApproveDriverTable key={driver._id} driver={driver} />
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+          </TableBody>
+        </Table>
+      ) : (
+        <NoDataFound />
+      )}
+    </>
   );
 };
 

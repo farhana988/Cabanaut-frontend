@@ -48,8 +48,16 @@ export const useAuth = () => {
     try {
       const result = await login(data).unwrap();
       const userName = result?.data?.user?.name || "user";
+      const block = result?.data?.user?.isBlocked === true;
+   
       showSuccessToast("Login Successful", `Welcome back, ${userName}!`);
-      navigate("/");
+
+      if (block) {
+        navigate("/user-blocked");
+      } else {
+        navigate("/");
+      }
+
       return result;
     } catch (err) {
       console.error("Login failed:", err);

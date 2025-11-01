@@ -25,7 +25,7 @@ const ApproveDriverTable = ({ driver }: DriverTableProps) => {
         <Select
           onValueChange={(value) => handleStatusChange(driver._id, value)}
         >
-          <SelectTrigger className="w-full xl:w-1/2 2xl:w-1/3 mx-auto"></SelectTrigger>
+          <SelectTrigger className="w-12 mx-auto"></SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectItem value="APPROVED">APPROVED</SelectItem>

@@ -7,6 +7,7 @@ import Pricing from "@/pages/footer/Pricing";
 import TermsOfService from "@/pages/footer/TermsOfService";
 import PrivacyPolicy from "@/pages/footer/PrivacyPolicy";
 import BookARide from "@/pages/BookARide";
+import Blocked from "@/pages/Blocked";
 
 export const publicRoutes = [
   { Component: Home, path: "/" },
@@ -18,4 +19,5 @@ export const publicRoutes = [
   { Component: Pricing, path: "pricing" },
   { Component: TermsOfService, path: "terms" },
   { Component: PrivacyPolicy, path: "privacy" },
+  { Component: Blocked, path: "user-blocked" },
 ];
