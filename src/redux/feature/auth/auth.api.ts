@@ -16,6 +16,13 @@ export const authApi = baseApi.injectEndpoints({
         data: userInfo,
       }),
     }),
+    resetPassword: builder.mutation({
+      query: (userInfo) => ({
+        url: "/auth/reset-password",
+        method: "POST",
+        data: userInfo,
+      }),
+    }),
 
     logout: builder.mutation({
       query: () => ({
@@ -27,5 +34,9 @@ export const authApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation, useLogoutMutation } =
-  authApi;
+export const {
+  useRegisterMutation,
+  useLoginMutation,
+  useLogoutMutation,
+  useResetPasswordMutation,
+} = authApi;
