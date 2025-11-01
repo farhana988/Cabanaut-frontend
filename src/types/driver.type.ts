@@ -24,3 +24,25 @@ export interface IDriverRide {
   createdAt: string;
   updatedAt: string;
 }
+export interface IDriver {
+  _id: string;
+  user: string;
+  userEmail: string;
+  userName: string;
+  vehicle: {
+    make?: string;
+    model?: string;
+    plateNumber?: string;
+  };
+  licenseNumber: string;
+  nationalId: string;
+  isOnline: boolean;
+  approvedStatus: string;
+  totalEarning: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface DriverTableProps {
+  driver: IDriver;
+}

@@ -2,17 +2,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDriverRegisterMutation } from "@/redux/feature/driver/driver.api";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
 import {
-  registerSchema,
+  driverRegisterSchema,
   type RegisterFormData,
 } from "@/schemas/driverRegister.schema";
-import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
 export const useDriverRegister = () => {
   const [driverRegister, { isLoading }] = useDriverRegisterMutation();
 
   const form = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodResolver(driverRegisterSchema),
     defaultValues: {
       licenseNumber: "",
       nationalId: "",

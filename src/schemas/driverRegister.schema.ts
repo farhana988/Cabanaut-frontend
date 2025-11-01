@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const registerSchema = z.object({
+export const driverRegisterSchema = z.object({
   licenseNumber: z.string().min(1, { message: "License number is required" }),
   nationalId: z.string().min(1, { message: "National ID is required" }),
   vehicle: z.object({
@@ -10,4 +10,4 @@ export const registerSchema = z.object({
   }),
 });
 
-export type RegisterFormData = z.infer<typeof registerSchema>;
+export type RegisterFormData = z.infer<typeof driverRegisterSchema>;
