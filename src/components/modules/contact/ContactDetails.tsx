@@ -1,9 +1,10 @@
 import { contactDetails } from "@/data/contactData";
+import contact from "../../../assets/images/contact.avif";
 
 const ContactDetails = () => (
   <div className="w-full md:w-1/2">
     <img
-      src="/src/assets/images/contact.avif"
+      src={contact}
       className="w-full h-60 object-cover rounded-md mb-4"
       alt="Contact"
     />

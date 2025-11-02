@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Link } from "react-router";
+import block from "../assets/images/block.png"
 
 const Blocked = () => {
   return (
@@ -17,7 +18,7 @@ const Blocked = () => {
       className="mt-10 flex flex-col items-center justify-center
      "
     >
-      <img src="/src/assets/images/block.png" alt="Account Blocked" />
+      <img src={block} alt="Account Blocked" />
 
       <div className=" text-center max-w-lg w-full">
         <h1 className="text-3xl font-semibold text-error mb-4">

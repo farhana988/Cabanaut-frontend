@@ -2,6 +2,7 @@ import IconBtn from "@/components/buttons/IconBtn";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { aboutFeatures } from "@/data/aboutData";
 import { CheckCircle } from "lucide-react";
+import about from "../../../assets/images/about/about.png";
 
 const AboutFeatures = () => {
   return (
@@ -41,8 +42,7 @@ const AboutFeatures = () => {
         {/* Right image */}
         <div className="md:w-1/2 flex justify-center">
           <img
-            src="/src/assets/images/about/about.png"
-            alt="CarrGo Taxi Service"
+            src={about}
             className="object-contain"
           />
         </div>

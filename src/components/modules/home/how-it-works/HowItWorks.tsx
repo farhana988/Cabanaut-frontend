@@ -1,6 +1,6 @@
 import SectionHeader from "@/components/shared/SectionHeader";
 import { howItWorksSteps } from "@/data/howItWorksData";
-
+import howItWorks from "../../../../assets/images/how-it-works.png";
 const HowItWorks = () => {
   return (
     <>
@@ -30,7 +30,7 @@ const HowItWorks = () => {
         {/* RIGHT SIDE - PHONE MOCKUP */}
         <div className="flex justify-center">
           <img
-            src="/src/assets/images/how-it-works.png"
+            src={howItWorks}
             alt="Map preview"
             className="object-cover w-[280px] 
              h-[560px] "

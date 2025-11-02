@@ -25,7 +25,6 @@ const RideHistory = () => {
 
   // Filter rides
   const filteredRides = rides?.filter((ride: IRide) => {
-    // Search by pickup or destination
     const matchesSearch =
       ride.pickupLocation.address
         .toLowerCase()
@@ -34,18 +33,20 @@ const RideHistory = () => {
         .toLowerCase()
         .includes(search.toLowerCase());
 
-    // Filter by status
     const matchesStatus = statusFilter ? ride.status === statusFilter : true;
-
-    // Filter by fare
-    const matchesFare =
-      ride.fare * 10 >= fareRange[0] && ride.fare * 10 <= fareRange[1];
-
-    // Filter by date
+    const matchesFare = ride.fare >= fareRange[0] && ride.fare <= fareRange[1];
     const requestedAt = new Date(ride.timestampsLog.requestedAt);
     const matchesDate =
       (!dateRange[0] || requestedAt >= dateRange[0]) &&
       (!dateRange[1] || requestedAt <= dateRange[1]);
+
+    console.log(
+      ride._id,
+      matchesSearch,
+      matchesStatus,
+      matchesFare,
+      matchesDate
+    );
 
     return matchesSearch && matchesStatus && matchesFare && matchesDate;
   });

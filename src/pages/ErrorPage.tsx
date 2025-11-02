@@ -1,10 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import error from "../assets/images/error.png";
 
 function ErrorPage() {
   return (
     <section className=" flex flex-col items-center justify-center min-h-screen">
-      <img src="/src/assets/images/error.png" alt="Error illustration" />
+      <img src={error} alt="Error illustration" />
 
       <div className="flex justify-center items-center gap-5 ">
         <h2

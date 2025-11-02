@@ -16,6 +16,7 @@ import {
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { SquarePen, User, UserRoundPen } from "lucide-react";
 import { Link } from "react-router";
+import defaultAvatar from "../../assets/images/defaultUser.png";
 
 const UserProfile = () => {
   const { user, isLoading } = useCurrentUser();
@@ -24,7 +25,6 @@ const UserProfile = () => {
     return <LoadingPage />;
   }
 
-  const defaultAvatar = "/src/assets/images/defaultUser.png";
   return (
     <div className=" relative ">
       <SectionHeader title="User Information" />

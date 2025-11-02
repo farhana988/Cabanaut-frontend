@@ -5,6 +5,9 @@ interface Testimonial {
   feedback: string;
   avatar?: string;
 }
+import aysha from "../assets/images/testimonial/aysha.jpg";
+import rakib from "../assets/images/testimonial/rakib.jpg";
+import tania from "../assets/images/testimonial/tania.jpg";
 
 export const testimonials: Testimonial[] = [
   {
@@ -13,7 +16,7 @@ export const testimonials: Testimonial[] = [
     role: "Rider",
     feedback:
       "RideFlow made my daily commute stress-free. The app is fast, the drivers are professional, and I always feel safe!",
-    avatar: "/src/assets/images/testimonial/aysha.jpg",
+    avatar: aysha,
   },
   {
     id: 2,
@@ -21,7 +24,7 @@ export const testimonials: Testimonial[] = [
     role: "Driver",
     feedback:
       "As a driver, I love the flexibility and fair commission. RideFlow’s support team is top-notch!",
-    avatar: "/src/assets/images/testimonial/rakib.jpg",
+    avatar: rakib,
   },
   {
     id: 3,
@@ -29,6 +32,6 @@ export const testimonials: Testimonial[] = [
     role: "Rider",
     feedback:
       "Clean rides, quick pickups, and honest pricing — it’s my go-to ride-sharing app now.",
-    avatar: "/src/assets/images/testimonial/tania.jpg",
+    avatar: tania,
   },
 ];

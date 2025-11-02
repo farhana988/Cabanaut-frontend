@@ -29,7 +29,7 @@ export const authApi = baseApi.injectEndpoints({
         url: "/auth/logout",
         method: "POST",
       }),
-      invalidatesTags: ["USER"],
+      invalidatesTags: ["USER", "RIDE", "RIDER", "DRIVER", "ADMIN"],
     }),
   }),
 });

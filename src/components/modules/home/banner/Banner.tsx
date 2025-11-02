@@ -2,14 +2,14 @@ import IconBtn from "@/components/buttons/IconBtn";
 import { CheckCircle } from "lucide-react";
 import { bannerFeatures } from "@/data/bannerData";
 import BannerBottom from "./BannerBottom";
-
+import banner from "../../../../assets/images/banner.webp";
 const Banner = () => {
   return (
     <>
       <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] border">
         {/* Background image */}
         <img
-          src="/src/assets/images/banner.webp"
+          src={banner}
           className="absolute top-0 left-0 w-full h-full object-cover z-10"
           alt="Banner"
         />

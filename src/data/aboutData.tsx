@@ -1,11 +1,16 @@
 import type { TeamMember } from "@/types/about.type";
 import { Facebook, Linkedin, X } from "lucide-react";
 
+import team1 from "../assets/images/about/team-1.jpg";
+import team2 from "../assets/images/about/team-2.jpg";
+import team3 from "../assets/images/about/team-3.jpeg";
+import team4 from "../assets/images/about/team-4.jpg";
+
 export const aboutTeam: TeamMember[] = [
   {
     name: "John Williams",
     position: "Senior Chauffeur",
-    image: "/src/assets/images/about/team-1.jpg",
+    image: team1,
     socialLinks: [
       {
         href: "https://www.facebook.com/john.williams",
@@ -24,7 +29,7 @@ export const aboutTeam: TeamMember[] = [
   {
     name: "Michael Thoson",
     position: "Executive Chauffeur",
-    image: "/src/assets/images/about/team-2.jpg",
+    image: team2,
     socialLinks: [
       {
         href: "https://www.facebook.com/michael.thoson",
@@ -43,7 +48,7 @@ export const aboutTeam: TeamMember[] = [
   {
     name: "Sophia Martinez",
     position: "VIP Chauffeur",
-    image: "/src/assets/images/about/team-3.jpeg",
+    image: team3,
     socialLinks: [
       {
         href: "https://www.facebook.com/sophia.martinez",
@@ -62,7 +67,7 @@ export const aboutTeam: TeamMember[] = [
   {
     name: "David Clark",
     position: "Head Chauffeur",
-    image: "/src/assets/images/about/team-4.jpg",
+    image: team4,
     socialLinks: [
       {
         href: "https://www.facebook.com/david.clark",
@@ -80,26 +85,30 @@ export const aboutTeam: TeamMember[] = [
   },
 ];
 
+import offering1 from "../assets/images/about/offering-1.jpg";
+import offering2 from "../assets/images/about/offering-2.webp";
+import offering3 from "../assets/images/about/offering-3.jpg";
+
 export const aboutOfferings = [
   {
     title: "Credit booking",
     description:
       "There are many van of passage of suffer alteration lipsum is simply free text.",
-    image: "/src/assets/images/about/offering-1.jpg",
+    image: offering1,
     link: "https://external-site.com/credit-booking",
   },
   {
     title: "Home pickups",
     description:
       "There are many van of passage of suffer alteration lipsum is simply free text.",
-    image: "/src/assets/images/about/offering-2.webp",
+    image: offering2,
     link: "https://external-site.com/home-pickups",
   },
   {
     title: "Long travels",
     description:
       "There are many van of passage of suffer alteration lipsum is simply free text.",
-    image: "/src/assets/images/about/offering-3.jpg",
+    image: offering3,
     link: "https://external-site.com/long-travels",
   },
 ];

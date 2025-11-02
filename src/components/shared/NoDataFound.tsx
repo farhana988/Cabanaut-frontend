@@ -1,8 +1,10 @@
+import noData from "../../assets/images/no_data.png";
+
 const NoDataFound = () => {
   return (
     <div className="flex items-center justify-center xl:mt-20">
       <img
-        src="/src/assets/images/no_data.png"
+        src={noData}
         alt="No data found"
         className="w-full max-w-[600px] h-auto opacity-90"
       />

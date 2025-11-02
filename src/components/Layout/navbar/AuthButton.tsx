@@ -11,12 +11,11 @@ import { useAuth } from "@/hooks/useAuth";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { LogOut, User } from "lucide-react";
 import { Link } from "react-router";
-
+import defaultUser from "../../../assets/images/defaultUser.png"
 const AuthButton = () => {
   const { user } = useCurrentUser();
   const { handleLogout } = useAuth();
 
-  const defaultAvatar = "/src/assets/images/defaultUser.png";
   return (
     <>
       {user?.email ? (
@@ -29,7 +28,7 @@ const AuthButton = () => {
             >
               <Avatar className="h-8 w-8">
                 <AvatarImage
-                  src={user?.avatarUrl || defaultAvatar}
+                  src={user?.avatarUrl || defaultUser}
                   alt={user?.email}
                 />
                 <AvatarFallback>
