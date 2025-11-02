@@ -11,9 +11,10 @@ export const driverApi = baseApi.injectEndpoints({
     }),
 
     driverOnlineStatus: builder.mutation({
-      query: () => ({
+      query: (data) => ({
         url: `/driver/is-online`,
         method: "PATCH",
+        data: data,
       }),
       invalidatesTags: ["RIDE"],
     }),

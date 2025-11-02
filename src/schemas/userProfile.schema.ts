@@ -11,6 +11,11 @@ export const UpdateProfileSchema = z.object({
     })
     .optional(),
   address: z.string().optional(),
+  nationalId: z.string().optional(),
+  licenseNumber: z.string().optional(),
+  vehicleType: z.string().optional(),
+  vehicleModel: z.string().optional(),
+  vehiclePlateNumber: z.string().optional(),
 });
 
 export type UpdateProfileFormValues = z.infer<typeof UpdateProfileSchema>;

@@ -22,6 +22,11 @@ export const useUpdateUserProfile = () => {
       name: "",
       phone: "",
       address: "",
+      nationalId: "",
+      licenseNumber: "",
+      vehicleType: "",
+      vehicleModel: "",
+      vehiclePlateNumber: "",
     },
   });
 
@@ -32,6 +37,11 @@ export const useUpdateUserProfile = () => {
         name: user.name ?? "",
         phone: user.phone ?? "",
         address: user.address ?? "",
+        nationalId: user?.driverInfo?.nationalId ?? "",
+        licenseNumber: user?.driverInfo?.licenseNumber ?? "",
+        vehicleType: user?.driverInfo?.vehicle?.make ?? "",
+        vehicleModel: user?.driverInfo?.vehicle?.model ?? "",
+        vehiclePlateNumber: user?.driverInfo?.vehicle?.plateNumber ?? "",
       });
     }
   }, [user, form]);
@@ -41,9 +51,22 @@ export const useUpdateUserProfile = () => {
 
     const userId = user._id;
     const userData = {
-      name: data.name ?? user?.name ?? "",
-      phone: data.phone ?? user?.phone ?? "",
-      address: data.address ?? user?.address ?? "",
+      name: data.name || user?.name || "",
+      phone: data.phone || user?.phone || "",
+      address: data.address || user?.address || "",
+      driverInfo: {
+        nationalId: data.nationalId || user?.driverInfo?.nationalId || "",
+        licenseNumber:
+          data.licenseNumber || user?.driverInfo?.licenseNumber || "",
+        vehicle: {
+          make: data.vehicleType || user?.driverInfo?.vehicle?.make || "",
+          model: data.vehicleModel || user?.driverInfo?.vehicle?.model || "",
+          plateNumber:
+            data.vehiclePlateNumber ||
+            user?.driverInfo?.vehicle?.plateNumber ||
+            "",
+        },
+      },
     };
 
     try {

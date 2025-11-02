@@ -13,7 +13,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { SquarePen, User, UserRoundPen } from "lucide-react";
 import { Link } from "react-router";
@@ -24,6 +23,7 @@ const UserProfile = () => {
   if (isLoading) {
     return <LoadingPage />;
   }
+
   const defaultAvatar = "/src/assets/images/defaultUser.png";
   return (
     <div className=" relative ">
@@ -65,11 +65,10 @@ const UserProfile = () => {
         </CardHeader>
         {/* active */}
         <div
-          className={`w-4 h-4 rounded-full absolute left-[87px] top-[170px] ${
-            user?.isActive === "INACTIVE" && user?.isBlocked === false
-              ? "bg-error"
-              : "bg-green-500"
-          }`}
+          className={`w-4 h-4 rounded-full absolute left-[87px] top-[170px]
+            ${user?.isActive === "ACTIVE" ? "bg-green-500" : "bg-error"}
+            
+           `}
         ></div>
         {/* edit btn */}
         <Link to="/user/update-profile" className="absolute right-6">
@@ -80,7 +79,7 @@ const UserProfile = () => {
         <CardContent className="space-y-4 ">
           <section className="grid md:grid-cols-2 gap-4">
             <div className="flex gap-2 ">
-              <p className="font-medium text-lg">Name: </p>
+              <p className="font-medium text-lg wrap-break-word">Name: </p>
               {user?.name}
             </div>
             <div className="flex gap-2 ">
@@ -104,6 +103,36 @@ const UserProfile = () => {
             <p className="font-medium text-lg">Address: </p>
             {user?.address || "No address provided"}
           </div>
+          {user.driverInfo && (
+            <>
+              <section className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-2 ">
+                  <p className="font-medium text-lg">National Id: </p>
+                  {user?.driverInfo?.nationalId}
+                </div>
+                <div className="flex gap-2 ">
+                  <p className="font-medium text-lg">License Number: </p>
+                  {user?.driverInfo?.licenseNumber}
+                </div>
+              </section>
+              <section className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-2 ">
+                  <p className="font-medium text-lg">Vehicle Type: </p>
+                  {user?.driverInfo?.vehicle?.make}
+                </div>
+                <div className="flex gap-2 ">
+                  <p className="font-medium text-lg">Vehicle Model: </p>
+                  {user?.driverInfo?.vehicle?.model}
+                </div>
+              </section>
+              <section className="grid md:grid-cols-2 gap-4">
+                <div className="flex gap-2 ">
+                  <p className="font-medium text-lg">Vehicle PlateNumber: </p>
+                  {user?.driverInfo?.vehicle?.plateNumber}
+                </div>
+              </section>
+            </>
+          )}
         </CardContent>
       </Card>
     </div>
