@@ -14,7 +14,7 @@ import type { IDriver } from "@/types/driver.type";
 
 const ApproveDriver = () => {
   const { matchedDrivers, isLoading } = useMatchedDrivers();
-  console.log(matchedDrivers);
+
   if (isLoading) {
     return <LoadingPage></LoadingPage>;
   }

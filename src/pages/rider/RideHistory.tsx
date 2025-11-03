@@ -10,7 +10,7 @@ import RideFilters from "@/components/modules/dashboard/ride/RideFilters";
 const RideHistory = () => {
   const { data, isLoading } = useGetViewRideHistoryQuery(undefined);
   const rides = data?.data;
-  console.log(rides);
+
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<string | "">("");
   const [fareRange, setFareRange] = useState<[number, number]>([0, 1000]);
@@ -39,14 +39,6 @@ const RideHistory = () => {
     const matchesDate =
       (!dateRange[0] || requestedAt >= dateRange[0]) &&
       (!dateRange[1] || requestedAt <= dateRange[1]);
-
-    console.log(
-      ride._id,
-      matchesSearch,
-      matchesStatus,
-      matchesFare,
-      matchesDate
-    );
 
     return matchesSearch && matchesStatus && matchesFare && matchesDate;
   });

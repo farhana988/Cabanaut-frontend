@@ -54,8 +54,9 @@ const RideFilters = ({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="COMPLETED">Completed</SelectItem>
-            <SelectItem value="cANCELLED">Canceled</SelectItem>
+            <SelectItem value="CANCELLED">Canceled</SelectItem>
             <SelectItem value="REQUESTED">Pending</SelectItem>
+            <SelectItem value="REJECTED">rejected</SelectItem>
           </SelectContent>
         </Select>
       </div>
