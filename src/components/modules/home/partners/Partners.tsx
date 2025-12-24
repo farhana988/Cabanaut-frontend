@@ -5,7 +5,9 @@ import Marquee from "react-fast-marquee";
 const Partners = () => {
   return (
     <section className="-mx-5">
-      <SectionHeader title="Our Trusted Partners & Media Mentions" />
+      <div className="px-5">
+        <SectionHeader title="Our Trusted Partners & Media Mentions" />
+      </div>
       <div
         className="bg-linear-to-b from-custom-accent/30 via-custom-accent/5
         to-custom-accent/30 py-4"

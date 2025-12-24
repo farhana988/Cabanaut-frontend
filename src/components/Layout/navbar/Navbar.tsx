@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <header className="fixed w-full top-1.5 z-50">
       <div
-        className="max-w-[1600px] 2xl:mx-auto bg-custom-secondary text-snow-white
+        className="max-w-7xl xl:mx-auto bg-custom-secondary text-snow-white
        rounded-full mx-2"
       >
         <nav className="pl-5 xl:pl-8 pr-2 xl:pr-4 relative ">

@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-custom-secondary text-snow-white px-8 py-10 mt-20">
       {/* grid */}
-      <div className="xl:max-w-11/12 mx-auto flex flex-wrap justify-between gap-10">
+      <div className=" flex flex-wrap justify-between gap-10">
         {/* About */}
         <div className="w-full sm:w-[40%] xl:w-[30%]">
           <FooterAbout />
