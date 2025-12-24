@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { FormFieldInput } from "../shared/FormField";
 import { useAuth } from "@/hooks/useAuth";
 import SubmitButton from "../buttons/SubmitButton";
+import { Button } from "../ui/button";
 
 const LoginForm = ({
   className,
@@ -16,6 +17,16 @@ const LoginForm = ({
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     await handleLogin(data as { email: string; password: string });
   };
+  // Autofill functions
+  const fillDriverCredentials = () => {
+    form.setValue("email", "driver@gmail.com");
+    form.setValue("password", "123456aA@");
+  };
+
+  const fillAdminCredentials = () => {
+    form.setValue("email", "super@gmail.com");
+    form.setValue("password", "12345678");
+  };
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -25,6 +36,7 @@ const LoginForm = ({
           Enter your email below to login to your account
         </p>
       </div>
+
       <div className="grid gap-6 w-96">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -54,6 +66,25 @@ const LoginForm = ({
         <Link to="/register" replace className="underline underline-offset-4">
           Register
         </Link>
+      </div>
+
+      {/* 🔹 Quick Login Buttons */}
+      <div className="grid grid-cols-2 gap-4">
+        <Button
+          type="button"
+          className=" rounded-full"
+          onClick={fillDriverCredentials}
+        >
+          Login as Driver
+        </Button>
+
+        <Button
+          type="button"
+          className=" rounded-full"
+          onClick={fillAdminCredentials}
+        >
+          Login as Admin
+        </Button>
       </div>
     </div>
   );
