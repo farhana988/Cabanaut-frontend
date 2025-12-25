@@ -3,7 +3,7 @@ import { Car } from "lucide-react";
 const SectionDivider = () => {
   return (
     <div
-      className="my-20 flex items-center justify-center space-x-6 
+      className="my-16 flex items-center justify-center space-x-6 
      border-custom-secondary/20 dark:border-white/20"
     >
       <hr className="grow border-custom-secondary/20 dark:border-white/20" />

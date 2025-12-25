@@ -6,7 +6,7 @@ import banner from "../../../../assets/images/banner.webp";
 const Banner = () => {
   return (
     <>
-      <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] border">
+      <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] border">
         {/* Background image */}
         <img
           src={banner}
