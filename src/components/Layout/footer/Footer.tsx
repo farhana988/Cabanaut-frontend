@@ -6,7 +6,7 @@ import FooterAbout from "./FooterAbout";
 
 const Footer = () => {
   return (
-    <footer className="bg-custom-secondary text-snow-white px-8 py-10 mt-20">
+    <footer className="bg-custom-secondary text-snow-white px-8 pt-24 pb-10 mt-40">
       {/* grid */}
       <div className=" flex flex-wrap justify-between gap-10">
         {/* About */}
